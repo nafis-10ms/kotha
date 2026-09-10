@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Enable microphone — Kotha</title>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(160deg, #17151f, #221d33);
+        color: #f2f2f5;
+        font: 14px/1.6 "Segoe UI", "Noto Sans Bengali", Roboto, -apple-system, sans-serif;
+      }
+      .card {
+        width: 460px;
+        max-width: calc(100vw - 32px);
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.09);
+        border-radius: 16px;
+        padding: 32px;
+        text-align: center;
+        box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+      }
+      .mic {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: linear-gradient(155deg, #6d46d6, #5233ad);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+      }
+      .mic svg { width: 30px; height: 30px; fill: #fff; }
+      h1 { font-size: 20px; margin: 0 0 8px; font-weight: 700; }
+      p { margin: 0 0 20px; color: #b6b1cc; font-size: 13.5px; }
+      button {
+        border: none;
+        border-radius: 9px;
+        padding: 12px 22px;
+        font-size: 14px;
+        font-weight: 700;
+        cursor: pointer;
+        background: linear-gradient(155deg, #6d46d6, #5233ad);
+        color: #fff;
+        transition: box-shadow .15s ease, transform .1s ease;
+      }
+      button:hover { box-shadow: 0 6px 20px rgba(109, 70, 214, .5); }
+      button:active { transform: scale(.98); }
+      .status {
+        margin-top: 20px;
+        font-size: 13.5px;
+        min-height: 22px;
+        font-weight: 600;
+      }
+      .ok { color: #7fe0a0; }
+      .bad { color: #ff9086; }
+      .hint {
+        margin-top: 18px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255,255,255,.08);
+        font-size: 12px;
+        color: #8a85a0;
+        text-align: left;
+        line-height: 1.7;
+      }
+      .hint b { color: #cfc9ee; }
+      .hidden { display: none; }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="mic">
+        <svg viewBox="0 0 24 24"><path d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+      </div>
+      <h1>Enable microphone access</h1>
+      <p>
+        <b>Kotha</b> needs microphone permission once. Click below and choose
+        <b>Allow</b> in Chrome's prompt — you won't be asked again.
+      </p>
+      <button id="enable">Allow microphone</button>
+      <div class="status" id="status"></div>
+
+      <div class="hint" id="deniedHelp">
+        <b>If you accidentally blocked it:</b> click the icon at the left of
+        the address bar (🔒 or ⓘ) → <b>Site settings</b> → set
+        <b>Microphone</b> to <b>Allow</b>, then reload this page.
+      </div>
+    </div>
+
+    <script src="permission.js"></script>
+  </body>
+</html>

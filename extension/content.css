@@ -1,0 +1,6 @@
+/* Styling for the floating mic button and preview panel is injected via a
+   shadow DOM in content.js to avoid clashing with host page styles. This
+   file intentionally left minimal. */
+#kotha-root {
+  all: initial;
+}
